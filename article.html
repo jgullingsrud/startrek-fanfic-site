@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Star Trek Encyclopedia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/article.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Star Trek Encyclopedia</h1>
+                <p class="tagline">Explore Strange New Worlds of Knowledge</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#browse">Browse Articles</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article class="article-content">
+                <div id="article-loading">
+                    <p>Loading article...</p>
+                </div>
+                <div id="article-body" style="display: none;"></div>
+                <div id="article-error" style="display: none;">
+                    <h2>Article Not Found</h2>
+                    <p>Sorry, the requested article could not be found.</p>
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Star Trek Encyclopedia. A fan-created reference project.</p>
+                <p class="footer-disclaimer">Star Trek and all related marks are trademarks of Paramount. This site is fan-created and not affiliated with or endorsed by Paramount.</p>
+                <p class="footer-motto">Live Long and Prosper 🖖</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Article mapping - maps article IDs to their markdown file paths
+        const articleMap = {
+            'picard': 'articles/characters/picard.md',
+            'warp-drive': 'articles/technology/warp-drive.md',
+            'vulcans': 'articles/species/vulcans.md',
+            'enterprise-1701': 'articles/ships/enterprise-1701.md'
+        };
+
+        // Get article ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+
+        async function loadArticle(articleId) {
+            const loadingEl = document.getElementById('article-loading');
+            const bodyEl = document.getElementById('article-body');
+            const errorEl = document.getElementById('article-error');
+
+            if (!articleId || !articleMap[articleId]) {
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            try {
+                const response = await fetch(articleMap[articleId]);
+
+                if (!response.ok) {
+                    throw new Error('Article not found');
+                }
+
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+
+                bodyEl.innerHTML = html;
+                loadingEl.style.display = 'none';
+                bodyEl.style.display = 'block';
+
+                // Update page title with article title
+                const firstHeading = bodyEl.querySelector('h1');
+                if (firstHeading) {
+                    document.title = firstHeading.textContent + ' - Star Trek Encyclopedia';
+                }
+            } catch (error) {
+                console.error('Error loading article:', error);
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+            }
+        }
+
+        // Load article when page loads
+        if (articleId) {
+            loadArticle(articleId);
+        } else {
+            document.getElementById('article-loading').style.display = 'none';
+            document.getElementById('article-error').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

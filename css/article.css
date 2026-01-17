@@ -1,0 +1,202 @@
+/* Article-specific styles */
+
+.article-content {
+    background-color: var(--background-light);
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    max-width: 900px;
+    min-height: 400px;
+}
+
+#article-loading,
+#article-error {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#article-loading p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+#article-error h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#article-error p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* Markdown content styling */
+#article-body h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent-blue);
+}
+
+#article-body h2 {
+    color: var(--accent-blue);
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--background-medium);
+}
+
+#article-body h3 {
+    color: var(--accent-purple);
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#article-body h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#article-body p {
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+#article-body ul,
+#article-body ol {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    margin-left: 30px;
+    line-height: 1.8;
+}
+
+#article-body li {
+    margin-bottom: 10px;
+}
+
+#article-body a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-blue);
+    transition: all 0.3s ease;
+}
+
+#article-body a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+#article-body blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+    background-color: var(--background-medium);
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+#article-body code {
+    background-color: var(--background-medium);
+    color: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+}
+
+#article-body pre {
+    background-color: var(--background-medium);
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border: 1px solid var(--background-light);
+}
+
+#article-body pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+#article-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+    border: 2px solid var(--primary-color);
+}
+
+#article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--background-medium);
+}
+
+#article-body table th {
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+#article-body table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--background-light);
+    color: var(--text-primary);
+}
+
+#article-body table tr:hover {
+    background-color: var(--background-light);
+}
+
+#article-body hr {
+    border: none;
+    border-top: 2px solid var(--accent-purple);
+    margin: 40px 0;
+}
+
+/* Info boxes */
+#article-body .infobox {
+    background-color: var(--background-medium);
+    border: 2px solid var(--accent-blue);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#article-body .infobox h3 {
+    margin-top: 0;
+    color: var(--accent-blue);
+}
+
+/* Responsive design for articles */
+@media (max-width: 768px) {
+    .article-content {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    #article-body h1 {
+        font-size: 2rem;
+    }
+
+    #article-body h2 {
+        font-size: 1.6rem;
+    }
+
+    #article-body h3 {
+        font-size: 1.3rem;
+    }
+}
