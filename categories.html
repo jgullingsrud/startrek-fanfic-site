@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Star Trek Encyclopedia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .category-section {
+            margin-bottom: 60px;
+        }
+        .category-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+        .category-description {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .article-item {
+            background: linear-gradient(135deg, var(--background-medium) 0%, var(--background-light) 100%);
+            border: 2px solid var(--background-light);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .article-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.2);
+        }
+        .article-item h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .article-item h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .article-item h3 a:hover {
+            color: var(--accent-blue);
+        }
+        .article-subtitle {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .article-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Star Trek Encyclopedia</h1>
+                <p class="tagline">Explore Strange New Worlds of Knowledge</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Articles</a></li>
+                    <li><a href="categories.html" class="active">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="featured">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--accent-blue); margin-bottom: 50px;">Browse by Category</h2>
+
+                <!-- Characters -->
+                <div class="category-section">
+                    <h2>Characters</h2>
+                    <p class="category-description">Explore the captains, crew members, and notable figures who shaped Star Trek history</p>
+                    <div class="article-list">
+                        <div class="article-item">
+                            <h3><a href="article.html?id=picard">Jean-Luc Picard</a></h3>
+                            <p class="article-subtitle">Captain, USS Enterprise-D/E (TNG)</p>
+                            <p class="article-desc">One of Starfleet's most distinguished captains, known for diplomacy and moral leadership</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=kirk">James T. Kirk</a></h3>
+                            <p class="article-subtitle">Captain, USS Enterprise (TOS)</p>
+                            <p class="article-desc">Legendary captain who proved humanity belonged among the stars</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=spock">Spock</a></h3>
+                            <p class="article-subtitle">Science Officer, USS Enterprise (TOS)</p>
+                            <p class="article-desc">Half-Vulcan, half-human officer whose struggle between logic and emotion defined an era</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=mccoy">Dr. Leonard "Bones" McCoy</a></h3>
+                            <p class="article-subtitle">Chief Medical Officer, USS Enterprise (TOS)</p>
+                            <p class="article-desc">Compassionate doctor and moral compass of the original Enterprise crew</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=data">Data</a></h3>
+                            <p class="article-subtitle">Operations Officer, USS Enterprise-D/E (TNG)</p>
+                            <p class="article-desc">Sentient android seeking to understand and achieve humanity</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=janeway">Kathryn Janeway</a></h3>
+                            <p class="article-subtitle">Captain, USS Voyager (VOY)</p>
+                            <p class="article-desc">Led her crew home from the Delta Quadrant against impossible odds</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=seven">Seven of Nine</a></h3>
+                            <p class="article-subtitle">Astrometrics Officer, USS Voyager (VOY)</p>
+                            <p class="article-desc">Former Borg drone who reclaimed her humanity</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=archer">Jonathan Archer</a></h3>
+                            <p class="article-subtitle">Captain, Enterprise NX-01 (ENT)</p>
+                            <p class="article-desc">First captain of Enterprise and founding father of the Federation</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=tpol">T'Pol</a></h3>
+                            <p class="article-subtitle">Science Officer, Enterprise NX-01 (ENT)</p>
+                            <p class="article-desc">First Vulcan to serve in human Starfleet, balancing logic and emotion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species -->
+                <div class="category-section">
+                    <h2>Alien Species</h2>
+                    <p class="category-description">Learn about the diverse species encountered across the galaxy</p>
+                    <div class="article-list">
+                        <div class="article-item">
+                            <h3><a href="article.html?id=vulcans">Vulcans</a></h3>
+                            <p class="article-subtitle">Founding Federation Species</p>
+                            <p class="article-desc">Logical beings who mastered their emotions and became humanity's mentors</p>
+                        </div>
+                        <div class="article-item">
+                            <h3><a href="article.html?id=borg">The Borg</a></h3>
+                            <p class="article-subtitle">Cybernetic Collective</p>
+                            <p class="article-desc">One of the Federation's most terrifying threats, assimilating entire civilizations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology -->
+                <div class="category-section">
+                    <h2>Technology</h2>
+                    <p class="category-description">Explore the advanced technology that makes space exploration possible</p>
+                    <div class="article-list">
+                        <div class="article-item">
+                            <h3><a href="article.html?id=warp-drive">Warp Drive</a></h3>
+                            <p class="article-subtitle">Faster-Than-Light Propulsion</p>
+                            <p class="article-desc">The revolutionary technology that opened the galaxy to exploration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Starships -->
+                <div class="category-section">
+                    <h2>Starships</h2>
+                    <p class="category-description">Discover the vessels that explored strange new worlds</p>
+                    <div class="article-list">
+                        <div class="article-item">
+                            <h3><a href="article.html?id=enterprise-1701">USS Enterprise NCC-1701</a></h3>
+                            <p class="article-subtitle">Constitution-class Starship</p>
+                            <p class="article-desc">The legendary original Enterprise that began the legacy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder categories -->
+                <div class="category-section">
+                    <h2>Coming Soon</h2>
+                    <p class="category-description">More categories will be added as new articles are written</p>
+                    <div class="article-list">
+                        <div class="article-item" style="opacity: 0.6;">
+                            <h3>Planets & Locations</h3>
+                            <p class="article-subtitle">Worlds and space stations</p>
+                            <p class="article-desc">Articles coming soon...</p>
+                        </div>
+                        <div class="article-item" style="opacity: 0.6;">
+                            <h3>Organizations</h3>
+                            <p class="article-subtitle">Starfleet, Federation, and more</p>
+                            <p class="article-desc">Articles coming soon...</p>
+                        </div>
+                        <div class="article-item" style="opacity: 0.6;">
+                            <h3>Events & History</h3>
+                            <p class="article-subtitle">Key moments in Star Trek lore</p>
+                            <p class="article-desc">Articles coming soon...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Star Trek Encyclopedia. A fan-created reference project.</p>
+                <p class="footer-disclaimer">Star Trek and all related marks are trademarks of Paramount. This site is fan-created and not affiliated with or endorsed by Paramount.</p>
+                <p class="footer-motto">Live Long and Prosper 🖖</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
